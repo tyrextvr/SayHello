@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<meta charset="utf-8">
+		<title>Say Hello</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+	</head>
+	<body>
+		<img src="https://clutchco-static.s3.amazonaws.com/s3fs-public/logos/sayhello_agency_logo.png?VersionId=RuoK0YLtdKrTlozMA0JB4X0tPm3wfF1t">
+		<br>
+		<form action='greet' method="post">
+			{% for message in get_flashed_messages()%}
+				<p> {{message}} </p>
+			{% endfor %}
+			<br>
+			<input type="text" name="name_input">
+			<br>
+			<br>
+			<input type="submit" value="GREET" id="greet">
+		</form>
+	</body>
+</html>
